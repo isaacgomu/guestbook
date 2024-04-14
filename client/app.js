@@ -24,9 +24,12 @@ async function getMessages() {
 }
 
 async function deleteMessage(messageId) {
-  const response = await fetch(`http://localhost:1937/message/${messageId}`, {
-    method: "DELETE",
-  });
+  const response = await fetch(
+    `http://guestbook-dlnk.onrender.com/message/${messageId}`,
+    {
+      method: "DELETE",
+    }
+  );
   getMessages();
 }
 
@@ -36,13 +39,16 @@ async function handleSubmit(event) {
   event.preventDefault();
   const data = new FormData(form);
   const formValues = Object.fromEntries(data);
-  const addmessage = await fetch("http://localhost:1937/messageadd", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(formValues),
-  });
+  const addmessage = await fetch(
+    "http://guestbook-dlnk.onrender.com/messageadd",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formValues),
+    }
+  );
   console.log("hello i am working");
   getMessages();
   form.reset();
