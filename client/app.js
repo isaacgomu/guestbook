@@ -2,7 +2,7 @@ const form = document.getElementById("form");
 const guestbookWrapper = document.getElementById("guestbookWrapper");
 
 async function getMessages() {
-  const response = await fetch("http://localhost:1937/guestbook");
+  const response = await fetch("https://guestbook-dlnk.onrender.com/guestbook");
   const messages = await response.json();
   console.log("hi");
   guestbookWrapper.textContent = "";
