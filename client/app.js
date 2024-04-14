@@ -25,7 +25,7 @@ async function getMessages() {
 
 async function deleteMessage(messageId) {
   const response = await fetch(
-    `http://guestbook-dlnk.onrender.com/message/${messageId}`,
+    `https://guestbook-dlnk.onrender.com/message/${messageId}`,
     {
       method: "DELETE",
     }
@@ -40,7 +40,7 @@ async function handleSubmit(event) {
   const data = new FormData(form);
   const formValues = Object.fromEntries(data);
   const addmessage = await fetch(
-    "http://guestbook-dlnk.onrender.com/messageadd",
+    "https://guestbook-dlnk.onrender.com/messageadd",
     {
       method: "POST",
       headers: {
